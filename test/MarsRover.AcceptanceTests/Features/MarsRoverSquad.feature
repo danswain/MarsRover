@@ -11,3 +11,12 @@ Scenario: Control 1 Rover in a 5x5 Plateau
 	And I enter the command M
 	When I enter the GO command
 	Then the output should be 1 2 N
+
+@acceptance
+Scenario: Control 1 Rover in a 4x4 Plateau
+	Given I have a RoverRoverSquadControl
+	And I enter the command 4 4
+	And I enter the command 0 0 N
+	And I enter the command MR
+	When I enter the GO command
+	Then the output should be 0 1 E

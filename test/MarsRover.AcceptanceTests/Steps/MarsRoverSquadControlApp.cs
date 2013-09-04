@@ -15,12 +15,12 @@ namespace MarsRover.AcceptanceTests.Steps
 			_marsRoverSquadControlApp.StartInfo.RedirectStandardInput = true;
 			_marsRoverSquadControlApp.StartInfo.FileName = "MarsRover.SquadControlApp.exe";
 			_marsRoverSquadControlApp.Start();
-			_marsRoverSquadControlApp.WaitForExit();
+			//_marsRoverSquadControlApp.WaitForExit();
 		}
 
 		public void InputCommand(string command)
 		{
-			_marsRoverSquadControlApp.StandardInput.Write(command);
+			_marsRoverSquadControlApp.StandardInput.WriteLine(command);
 		}
 
 		public string GetOutput()
