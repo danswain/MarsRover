@@ -62,6 +62,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MarsRover.SquadControlApp\MarsRover.SquadControlApp.csproj">
+      <Project>{c228454d-87aa-4ae7-bf21-1aa6a5e8e0eb}</Project>
+      <Name>MarsRover.SquadControlApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

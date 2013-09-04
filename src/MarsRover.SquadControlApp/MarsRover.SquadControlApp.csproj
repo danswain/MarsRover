@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>8f304d11-21b7-49f3-8342-d0dd77be89af</ProjectGuid>
+    <ProjectGuid>{C228454D-87AA-4AE7-BF21-1AA6A5E8E0EB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MarsRover.SquadControlApp</RootNamespace>

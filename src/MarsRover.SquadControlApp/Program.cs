@@ -10,7 +10,7 @@ namespace MarsRover.SquadControlApp
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Life on Mars");
+			Console.Write("1 2 N");
 		}
 	}
 }
