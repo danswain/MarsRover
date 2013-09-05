@@ -13,14 +13,14 @@ namespace MarsRover.UnitTests
 			//Given
 			var commandStrings = new List<string> {"5 5", "1 1 N", "MM"};
 			//When
-			var roverCommands = RoverCommandParser.Parse(commandStrings);
+			var roverCommands = ParseRoverCommands.From(commandStrings);
 
 			//Then
 			Assert.That(roverCommands.Count(), Is.EqualTo(1), "Should parser only 1 RoverCommand");
 			
 			var robotCommand = roverCommands.First();
 
-			Assert.That(robotCommand.StartingPosition, Is.EqualTo(Position.Parse("1 1 N")));
+			Assert.That(robotCommand.StartingPosition, Is.EqualTo(ParsePosition.From("1 1 N")));
 		}
 	}
 }

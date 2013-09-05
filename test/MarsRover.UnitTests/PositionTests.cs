@@ -9,7 +9,7 @@ namespace MarsRover.UnitTests
 		public void Should_parse_position_from_string()
 		{
 			//Given
-			var position = Position.Parse("1 2 N");
+			var position = ParsePosition.From("1 2 N");
 			
 			//Then
 			Assert.That(position.Coordinate.X, Is.EqualTo(1));

@@ -4,6 +4,7 @@
 	{
 		private readonly IOutput _output;
 		private readonly ICanNavigate _navigationSystem;
+		public Position CurrentPosition { get; private set; }
 
 
 		public Rover(Position startingPosition, IOutput output, ICanNavigate navigationSystem)
@@ -12,8 +13,6 @@
 			_navigationSystem = navigationSystem;
 			CurrentPosition = startingPosition;
 		}
-
-		public Position CurrentPosition { get; private set; }
 
 		public void Send(Instruction instruction)
 		{

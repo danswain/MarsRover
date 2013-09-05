@@ -6,6 +6,7 @@ namespace MarsRover
 {
 	public class Position : IEquatable<Position>
 	{
+		private readonly ParsePosition _parsePosition = new ParsePosition();
 		public Orientation Orientation { get; set; }
 		public Coordinate Coordinate { get; set; }
 
@@ -25,20 +26,6 @@ namespace MarsRover
 		public static bool operator !=(Position left, Position right)
 		{
 			return !Equals(left, right);
-		}
-
-		public static Position Parse(string input)
-		{
-			if(!Regex.IsMatch(input,@"^\d \d [NSEW]$"))
-				throw new CouldNotParsePositionException("Could not parse position from: " + input);
-
-			var positionArray = input.Split(' ');
-			return new Position
-				{
-					Coordinate = Coordinate.Parse(positionArray[0] + " " + positionArray[1]),
-					Orientation = ParseOrientation.From(positionArray[2])
-
-				};
 		}
 
 		public override bool Equals(object obj)
@@ -62,17 +49,5 @@ namespace MarsRover
 		}
 
 
-	}
-
-	public enum Orientation
-	{
-		N,S,E,W
-	}
-	public class ParseOrientation
-	{
-		public static Orientation From(string input)
-		{
-			return (Orientation) Enum.Parse(typeof(Orientation), input);
-		}
 	}
 }

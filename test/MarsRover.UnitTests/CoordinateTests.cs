@@ -35,7 +35,7 @@ namespace MarsRover.UnitTests
 			//Given
 			var coordinateString = "5 6";
 			//When
-			var parsedCoordinate = Coordinate.Parse(coordinateString);
+			var parsedCoordinate = ParseCoordinate.From(coordinateString);
 
 			//Then
 			Assert.That(parsedCoordinate.X, Is.EqualTo(5), "X Coordinate");
@@ -47,7 +47,7 @@ namespace MarsRover.UnitTests
 		public void Should__throw_error_for_invalid_coordinate_string(string coordinateString)
 		{
 				
-			var exception = Assert.Throws<InputBoundaryException>(() => Coordinate.Parse(coordinateString));
+			var exception = Assert.Throws<InputBoundaryException>(() => ParseCoordinate.From(coordinateString));
 
 			Assert.That(exception.Message,Is.EqualTo(coordinateString + " is not a valid coordinate"), "Hasn't thrown exception when given an incorrect coordinate string");
 			

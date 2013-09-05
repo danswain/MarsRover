@@ -3,16 +3,16 @@ using System.Linq;
 
 namespace MarsRover
 {
-	public class RoverCommandParser
+	public class ParseRoverCommands
 	{
-		public static IEnumerable<RobotCommand> Parse(IEnumerable<string> inputCommands)
+		public static IEnumerable<RobotCommand> From(IEnumerable<string> inputCommands)
 		{
 			var roverCommands = inputCommands.Skip(1).ToList();
 			for (int i = 0; i < roverCommands.Count(); i += 2)
 			{
 				yield return new RobotCommand
 					{
-						StartingPosition = Position.Parse(roverCommands[i]),
+						StartingPosition = ParsePosition.From(roverCommands[i]),
 						Instructions = ParseInstructions.From(roverCommands[i+1])
 					};
 			}

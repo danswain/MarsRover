@@ -1,17 +1,8 @@
 ﻿namespace MarsRover
 {
-	public interface ICanNavigate
-	{
-		void RoteRightFrom(Position currentPosition);
-		void RotateLeftFrom(Position currentPosition);
-		void MoveFrom(Position currentPosition);
-	}
-
 	public class NavigationSystem : ICanNavigate
 	{
 		
-		
-
 		public void RoteRightFrom(Position currentPosition)
 		{
 			switch (currentPosition.Orientation)
