@@ -20,3 +20,12 @@ Scenario: Control 1 Rover in a 4x4 Plateau
 	And I enter the command MR
 	When I enter the GO command
 	Then the output should be 0 1 E
+
+@ignore
+Scenario: A Rover that goes out of bounds
+	Given I have a RoverRoverSquadControl
+	And I enter the command 2 2
+	And I enter the command 0 0 N
+	And I enter the command MM
+	When I enter the GO command
+	Then the output should be 0 1 N

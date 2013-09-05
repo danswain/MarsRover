@@ -105,6 +105,51 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("5 x 5 Plateau with 3 Rovers")]
+        public virtual void _5X5PlateauWith3Rovers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 x 5 Plateau with 3 Rovers", ((string[])(null)));
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 24
+ testRunner.Given("I have a RoverRoverSquadControl", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "<Test Input>"});
+            table3.AddRow(new string[] {
+                        "5 5"});
+            table3.AddRow(new string[] {
+                        "1 2 N"});
+            table3.AddRow(new string[] {
+                        "LMLMLMLMM"});
+            table3.AddRow(new string[] {
+                        "3 3 E"});
+            table3.AddRow(new string[] {
+                        "MMRMMRMRRM"});
+            table3.AddRow(new string[] {
+                        "0 0 E"});
+            table3.AddRow(new string[] {
+                        "MMMMLM"});
+#line 25
+ testRunner.When("I send the the commands:", ((string)(null)), table3, "When ");
+#line 34
+ testRunner.When("I enter the GO command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "<Expected Output>"});
+            table4.AddRow(new string[] {
+                        "1 3 N"});
+            table4.AddRow(new string[] {
+                        "5 1 E"});
+            table4.AddRow(new string[] {
+                        "4 1 N"});
+#line 35
+ testRunner.Then("the result should be", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
