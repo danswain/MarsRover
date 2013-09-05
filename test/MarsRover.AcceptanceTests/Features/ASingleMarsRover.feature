@@ -1,4 +1,4 @@
-﻿Feature: MarsRoverSquad
+﻿Feature: A Single Mars Rover
 	In order to control a rover, 
 	As NASA 
 	I want to sends a simple string of letters to the RoverSquadControl

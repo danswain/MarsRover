@@ -19,20 +19,20 @@ namespace MarsRover.AcceptanceTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("MarsRoverSquad")]
-    public partial class MarsRoverSquadFeature
+    [NUnit.Framework.DescriptionAttribute("A Single Mars Rover")]
+    public partial class ASingleMarsRoverFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "MarsRoverSquad.feature"
+#line 1 "ASingleMarsRover.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "MarsRoverSquad", "In order to control a rover, \r\nAs NASA \r\nI want to sends a simple string of lette" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "A Single Mars Rover", "In order to control a rover, \r\nAs NASA \r\nI want to sends a simple string of lette" +
                     "rs to the RoverSquadControl", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }

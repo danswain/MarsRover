@@ -46,20 +46,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\MarsRoverSquad.feature.cs">
+    <Compile Include="Features\ASingleMarsRover.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MarsRoverSquad.feature</DependentUpon>
+      <DependentUpon>ASingleMarsRover.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\MultipleMarsRovers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleMarsRovers.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\MarsRoverSquadControlApp.cs" />
-    <Compile Include="Steps\MarsRoverSteps.cs" />
+    <Compile Include="Helpers\MarsRoverSquadControlApp.cs" />
+    <Compile Include="Steps\RoverSteps.cs" />
+    <Compile Include="Steps\TableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\MarsRoverSquad.feature">
+    <None Include="Features\ASingleMarsRover.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MarsRoverSquad.feature.cs</LastGenOutput>
+      <LastGenOutput>ASingleMarsRover.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\MultipleMarsRovers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MultipleMarsRovers.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

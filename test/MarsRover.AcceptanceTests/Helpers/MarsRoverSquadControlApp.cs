@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
-namespace MarsRover.AcceptanceTests.Steps
+namespace MarsRover.AcceptanceTests.Helpers
 {
 	public class MarsRoverSquadControlApp
 	{
@@ -18,6 +20,7 @@ namespace MarsRover.AcceptanceTests.Steps
 			_marsRoverSquadControlApp.StartInfo.RedirectStandardError = true;
 			_marsRoverSquadControlApp.StartInfo.FileName = "MarsRover.SquadControlApp.exe";
 			_marsRoverSquadControlApp.Start();
+			//_marsRoverSquadControlApp.WaitForExit();
 			
 		}
 
@@ -30,8 +33,21 @@ namespace MarsRover.AcceptanceTests.Steps
 		{
 			var output = _marsRoverSquadControlApp.StandardOutput.ReadToEnd();
 			Console.WriteLine(_marsRoverSquadControlApp.StandardError.ReadToEnd());			
-			_marsRoverSquadControlApp.WaitForExit();
+			
 			return output;
+		}
+
+		public void InputCommands(IEnumerable<string> commands)
+		{
+			foreach (var command in commands)
+			{
+				InputCommand(command);
+			}
+		}
+
+		public IEnumerable<string> GetOutputAsCollection()
+		{
+			return Regex.Split(GetOutput(), "\r\n");
 		}
 	}
 }
