@@ -45,7 +45,8 @@ namespace MarsRover.AcceptanceTests.Steps
 		public void ThenTheResultShouldBe(Table table)
 		{
 			var outputCollection = _marsRoverSquadControlApp.GetOutputAsCollection();
-			Assert.True(true);
+			var expected = table.AsRoverCommands();
+			CollectionAssert.AreEqual(expected, outputCollection);
 		}
 	}
 }

@@ -32,9 +32,9 @@ namespace MarsRover.AcceptanceTests.Helpers
 		public string GetOutput()
 		{
 			var output = _marsRoverSquadControlApp.StandardOutput.ReadToEnd();
-			Console.WriteLine(_marsRoverSquadControlApp.StandardError.ReadToEnd());			
-			
-			return output;
+			Console.WriteLine(_marsRoverSquadControlApp.StandardError.ReadToEnd());
+
+			return output.Trim();
 		}
 
 		public void InputCommands(IEnumerable<string> commands)
@@ -47,7 +47,9 @@ namespace MarsRover.AcceptanceTests.Helpers
 
 		public IEnumerable<string> GetOutputAsCollection()
 		{
-			return Regex.Split(GetOutput(), "\r\n");
+			var output = GetOutput();
+			var outputAsCollection = Regex.Split(output, "\r\n");
+			return outputAsCollection;
 		}
 	}
 }

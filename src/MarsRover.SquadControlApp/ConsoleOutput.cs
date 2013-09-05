@@ -20,7 +20,7 @@ namespace MarsRover.SquadControlApp
 
 		public void Write(string line)
 		{
-			Console.Write(line);
+			Console.WriteLine(line);
 		}
 	}
 }
