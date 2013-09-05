@@ -23,10 +23,11 @@ namespace MarsRover
 
 			foreach (var roverCommand in roverCommands)
 			{
-				var rover = new Rover(roverCommand.StartingPosition, _output);
+				Position startingPosition = roverCommand.StartingPosition;
+				var rover = new Rover(startingPosition, _output, new NavigationSystem());
 				foreach (var instruction in roverCommand.Instructions)
 				{
-					rover.Move(instruction);
+					rover.Send(instruction);
 				}
 				_rovers.Add(rover);
 				_output.WriteLine(rover.CurrentPosition.ToString());

@@ -44,6 +44,7 @@
     <Compile Include="Exceptions\CouldNotParsePositionException.cs" />
     <Compile Include="Exceptions\InputBoundaryException.cs" />
     <Compile Include="Instruction.cs" />
+    <Compile Include="NavigationSystem.cs" />
     <Compile Include="ParseInstructions.cs" />
     <Compile Include="IOutput.cs" />
     <Compile Include="MarsRoverSquadControl.cs" />

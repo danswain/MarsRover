@@ -22,7 +22,7 @@ namespace MarsRover.UnitTests
 
 			//Then
 
-			mockOutput.Verify(output=>output.WriteLine(It.IsAny<string>()));
+			mockOutput.Verify(output => output.WriteLine(It.Is<string>(outputValue => outputValue == "1 2 N")));
 		}
 	}
 }

@@ -43,9 +43,9 @@ namespace MarsRover
 			Y = y;
 		}
 
-		public int Y { get; private set; }
+		public int Y { get; set; }
 
-		public int X { get; private set; }
+		public int X { get; set; }
 
 		public override bool Equals(object obj)
 		{
