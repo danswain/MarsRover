@@ -8,7 +8,6 @@ namespace MarsRover
 	{
 		private readonly IOutput _output;
 		private List<Rover> _rovers = new List<Rover>();
-		private Rover _rover;
 		private ICanNavigate _navigationSystem;
 
 		public MarsRoverSquadControl(IOutput output)
@@ -26,10 +25,7 @@ namespace MarsRover
 
 			foreach (var roverCommand in roverCommands)
 			{
-				Position startingPosition = roverCommand.StartingPosition;
-				_navigationSystem = new NavigationSystem();
-				_rover = new Rover(startingPosition, _output, _navigationSystem);
-				var rover = _rover;
+				var rover = new Rover(roverCommand.StartingPosition, _output, _navigationSystem);
 				foreach (var instruction in roverCommand.Instructions)
 				{
 					rover.Send(instruction);
