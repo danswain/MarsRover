@@ -1,10 +1,12 @@
-﻿using NUnit.Framework;
+﻿using MarsRover.UnitTests.Parsers;
+using NUnit.Framework;
 
 namespace MarsRover.UnitTests
 {
 	[TestFixture]
 	public class CoordinateTests
 	{
+		private readonly ParseCoordinateTests _parseCoordinateTests = new ParseCoordinateTests();
 
 		[Test]
 		public void Should_give_coordinates_0_0_by_default()
@@ -28,30 +30,6 @@ namespace MarsRover.UnitTests
 			Assert.That(coordinate.Y, Is.EqualTo(2), "Default Y Coordinate is not 2");
 		}
 
-
-		[Test]
-		public void Should_parse_string_5_6()
-		{
-			//Given
-			var coordinateString = "5 6";
-			//When
-			var parsedCoordinate = ParseCoordinate.From(coordinateString);
-
-			//Then
-			Assert.That(parsedCoordinate.X, Is.EqualTo(5), "X Coordinate");
-			Assert.That(parsedCoordinate.Y, Is.EqualTo(6), "Y Coordinate");
-		}
-
-		[TestCase("A B")]
-		[TestCase("1 2 3")]
-		public void Should__throw_error_for_invalid_coordinate_string(string coordinateString)
-		{
-				
-			var exception = Assert.Throws<InputBoundaryException>(() => ParseCoordinate.From(coordinateString));
-
-			Assert.That(exception.Message,Is.EqualTo(coordinateString + " is not a valid coordinate"), "Hasn't thrown exception when given an incorrect coordinate string");
-			
-		}
 
 		[Test]
 		public void Should_be_able_to_compare_2_coordinates()

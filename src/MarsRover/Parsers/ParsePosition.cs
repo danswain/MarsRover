@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using MarsRover.Exceptions;
 
-namespace MarsRover
+namespace MarsRover.Parsers
 {
 	public class ParsePosition
 	{

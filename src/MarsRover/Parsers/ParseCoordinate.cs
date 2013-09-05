@@ -1,13 +1,10 @@
 ﻿using System.Text.RegularExpressions;
+using MarsRover.Exceptions;
 
-namespace MarsRover
+namespace MarsRover.Parsers
 {
 	public class ParseCoordinate
 	{
-		public ParseCoordinate()
-		{
-		}
-
 		public static Coordinate From(string input)
 		{
 			if (!Regex.IsMatch(input, @"^\d \d$"))

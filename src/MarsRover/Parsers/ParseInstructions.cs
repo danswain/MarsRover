@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MarsRover
+namespace MarsRover.Parsers
 {
 	public class ParseInstructions
 	{

@@ -1,4 +1,4 @@
-﻿namespace MarsRover
+﻿namespace MarsRover.Interfaces
 {
 	public interface ICanNavigate
 	{

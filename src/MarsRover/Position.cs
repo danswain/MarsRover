@@ -6,7 +6,6 @@ namespace MarsRover
 {
 	public class Position : IEquatable<Position>
 	{
-		private readonly ParsePosition _parsePosition = new ParsePosition();
 		public Orientation Orientation { get; set; }
 		public Coordinate Coordinate { get; set; }
 

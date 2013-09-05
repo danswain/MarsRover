@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using MarsRover.Interfaces;
+using Moq;
 using NUnit.Framework;
 
 namespace MarsRover.UnitTests

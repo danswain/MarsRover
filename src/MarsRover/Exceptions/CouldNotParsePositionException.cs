@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MarsRover
+namespace MarsRover.Exceptions
 {
 	public class CouldNotParsePositionException : Exception
 	{

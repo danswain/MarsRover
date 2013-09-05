@@ -1,4 +1,6 @@
-﻿namespace MarsRover
+﻿using MarsRover.Interfaces;
+
+namespace MarsRover
 {
 	public class NavigationSystem : ICanNavigate
 	{

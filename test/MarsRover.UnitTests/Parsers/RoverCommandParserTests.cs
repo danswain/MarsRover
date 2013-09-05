@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MarsRover.Parsers;
 using NUnit.Framework;
 
-namespace MarsRover.UnitTests
+namespace MarsRover.UnitTests.Parsers
 {
 	[TestFixture]
 	public class RoverCommandParserTests
