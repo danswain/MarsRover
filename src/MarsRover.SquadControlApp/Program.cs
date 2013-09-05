@@ -12,20 +12,16 @@ namespace MarsRover.SquadControlApp
 
 		static void Main(string[] args)
 		{
-			var marsRoverSquadControl = new MarsRoverSquadControl(new ConsoleOutput());
-
-			marsRoverSquadControl.SendCommand(FromConsoleInput());
+			var marsRoverSquadControl = new MarsRoverSquadControl(new ConsoleOutput(false));
+			marsRoverSquadControl.SendCommand(FromConsoleInput().ToList());
 		}
 
 		private static IEnumerable<string> FromConsoleInput()
 		{
-			var exitApp = false;
-			while (!exitApp)
+			string line;
+			while ("GO" != (line = Console.ReadLine()))
 			{
-				var input = Console.ReadLine();
-				if (input == "GO")
-					exitApp = true;
-				yield return input;
+				yield return line;
 			}
 		}
 	}

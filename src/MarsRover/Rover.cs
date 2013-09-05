@@ -34,19 +34,19 @@
 		private void Right()
 		{
 			_navigationSystem.RoteRightFrom(CurrentPosition);
-			_output.WriteLine(string.Format("{0}", CurrentPosition));
+			_output.Debug(string.Format("{0}", CurrentPosition));
 		}
 
 		private void Left()
 		{
 			_navigationSystem.RotateLeftFrom(CurrentPosition);
-			_output.WriteLine(string.Format("{0}", CurrentPosition));
+			_output.Debug(string.Format("{0}", CurrentPosition));
 		}
 
 		private void Move()
 		{
 			_navigationSystem.MoveFrom(CurrentPosition);
-			_output.WriteLine(string.Format("{0}", CurrentPosition));
+			_output.Debug(string.Format("{0}", CurrentPosition));
 		}
 	}
 }

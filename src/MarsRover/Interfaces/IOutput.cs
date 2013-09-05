@@ -2,6 +2,7 @@
 {
 	public interface IOutput
 	{
-		void WriteLine(string line);
+		void Debug(string line);
+		void Write(string line);
 	}
 }

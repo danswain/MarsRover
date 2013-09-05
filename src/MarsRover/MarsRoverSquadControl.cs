@@ -31,7 +31,7 @@ namespace MarsRover
 					rover.Send(instruction);
 				}
 				_rovers.Add(rover);
-				_output.WriteLine(rover.CurrentPosition.ToString());
+				_output.Write(rover.CurrentPosition.ToString());
 			}			
 		}
 	}

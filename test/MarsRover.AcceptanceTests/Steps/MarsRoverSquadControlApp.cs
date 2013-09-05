@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace MarsRover.AcceptanceTests.Steps
 {
@@ -11,11 +12,13 @@ namespace MarsRover.AcceptanceTests.Steps
 		{
 			_marsRoverSquadControlApp = new Process();
 			_marsRoverSquadControlApp.StartInfo.UseShellExecute = false;
+			
 			_marsRoverSquadControlApp.StartInfo.RedirectStandardOutput = true;
 			_marsRoverSquadControlApp.StartInfo.RedirectStandardInput = true;
+			_marsRoverSquadControlApp.StartInfo.RedirectStandardError = true;
 			_marsRoverSquadControlApp.StartInfo.FileName = "MarsRover.SquadControlApp.exe";
 			_marsRoverSquadControlApp.Start();
-			//_marsRoverSquadControlApp.WaitForExit();
+			
 		}
 
 		public void InputCommand(string command)
@@ -25,7 +28,10 @@ namespace MarsRover.AcceptanceTests.Steps
 
 		public string GetOutput()
 		{
-			return _marsRoverSquadControlApp.StandardOutput.ReadToEnd();
+			var output = _marsRoverSquadControlApp.StandardOutput.ReadToEnd();
+			Console.WriteLine(_marsRoverSquadControlApp.StandardError.ReadToEnd());			
+			_marsRoverSquadControlApp.WaitForExit();
+			return output;
 		}
 	}
 }

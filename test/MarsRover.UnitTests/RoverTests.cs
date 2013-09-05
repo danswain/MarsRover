@@ -26,7 +26,7 @@ namespace MarsRover.UnitTests
 			Assert.That(rover.CurrentPosition.Coordinate.Y, Is.EqualTo(yCoordinate), " Y Coordinate");
 			Assert.That(rover.CurrentPosition.Orientation, Is.EqualTo(orientation), "Orientation");
 			var outputString = xCoordinate + " " + yCoordinate + " " + orientation.ToString();
-			output.Verify(console => console.WriteLine(It.Is<string>(val=>val == outputString)));
+			output.Verify(console => console.Debug(It.Is<string>(val=>val == outputString)));
 		}
 	}
 }

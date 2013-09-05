@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using NUnit.Framework;
 
@@ -18,11 +19,11 @@ namespace MarsRover.UnitTests
 				{"5 5","1 1 N", "M"};
 
 			//When
-			roverSquadControl.SendCommand(input);
+			roverSquadControl.SendCommand(input.AsEnumerable());
 
 			//Then
 
-			mockOutput.Verify(output => output.WriteLine(It.Is<string>(outputValue => outputValue == "1 2 N")));
+			mockOutput.Verify(output => output.Debug(It.Is<string>(outputValue => outputValue == "1 2 N")));
 		}
 	}
 }

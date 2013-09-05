@@ -4,9 +4,22 @@ namespace MarsRover.SquadControlApp
 {
 	public class ConsoleOutput : IOutput
 	{
-		public void WriteLine(string line)
+		private readonly bool _debuggingEnabled;
+
+		public ConsoleOutput(bool debuggingEnabled)
 		{
-			Console.WriteLine(line);
+			_debuggingEnabled = debuggingEnabled;
+		}
+
+		public void Debug(string line)
+		{
+			if(_debuggingEnabled)
+				Console.WriteLine(line);
+		}
+
+		public void Write(string line)
+		{
+			Console.Write(line);
 		}
 	}
 }
